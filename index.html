@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HK Prashant Singh</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- ✅ Link Preview Meta Tags (for WhatsApp, Telegram, etc.) -->
+  <meta property="og:title" content="Love is Love checker 💖 Fake and true Love" />
+  <meta property="og:description" content="Check True Love & Real/Fake Relationships 🔥" />
+  <meta property="og:image" content="https://red-require-noble-farming.trycloudflare.com/love.p/love.jpg" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://red-require-noble-farming.trycloudflare.com/" />
+  
+  <!-- ✅ Twitter Preview (optional) -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Love is Love checker 💖 Fake and true Love">
+  <meta name="twitter:description" content="Check True Love & Real/Fake Relationships 🔥">
+  <meta name="twitter:image" content="https://red-require-noble-farming.trycloudflare.com/love.p/love.jpg">
+
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #0f0f0f, #1a1a1a);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2vh 4vw;
+      min-height: 100vh;
+    }
+    #adminCornerBtn {
+      position: fixed;
+      bottom: 8px;
+      left: 8px;
+      width: 45px;
+      height: 45px;
+      font-size: 1.2rem;
+      border-radius: 50%;
+      background: #000;
+      color: white;
+      border: none;
+      box-shadow: 0 0 10px #000;
+      cursor: pointer;
+      z-index: 999;
+    }
+    .profile-box {
+      background: #000;
+      border-radius: 20px;
+      padding: 20px;
+      box-shadow: 0 0 20px #ff4081;
+      max-width: 450px;
+      width: 100%;
+      text-align: center;
+    }
+    .final-box {
+      background: #000;
+      padding: 12px 20px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px #ff4081;
+      color: #ff4081;
+      font-size: 1.6rem;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 12px;
+    }
+    .profile {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      margin: 0 auto 15px auto;
+      background: url('love.p/love.jpg') no-repeat center center;
+      background-size: cover;
+      border: 5px solid #ff4081;
+    }
+    .love-india-panel {
+      background: #000;
+      color: #cc66ff;
+      padding: 14px 20px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px #cc66ff;
+      text-align: center;
+      font-size: 1.1rem;
+      max-width: 450px;
+      margin-top: 12px;
+    }
+    .input-box {
+      background: #000;
+      border-radius: 20px;
+      padding: 25px 20px;
+      box-shadow: 0 0 20px #00e676;
+      max-width: 450px;
+      width: 100%;
+      text-align: center;
+      margin-top: 15px;
+    }
+    input {
+      width: 90%;
+      padding: 12px;
+      margin: 10px 0;
+      font-size: 1rem;
+      border: none;
+      border-radius: 10px;
+      text-align: center;
+    }
+    button {
+      padding: 12px 25px;
+      margin-top: 10px;
+      font-size: 1rem;
+      background: #ff4081;
+      border: none;
+      color: white;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    #loading {
+      margin-top: 15px;
+      color: #00e676;
+      font-size: 1.2rem;
+      display: none;
+    }
+    #result, #fakeresult {
+      margin-top: 20px;
+      font-size: 1.3rem;
+      color: #00e676;
+    }
+    #description, #fakedesc {
+      margin-top: 10px;
+      font-size: 1rem;
+      color: #cccccc;
+    }
+    .special-offer {
+      background: #000;
+      box-shadow: 0 0 18px #d633ff;
+      padding: 25px 20px;
+      border-radius: 18px;
+      max-width: 460px;
+      margin-top: 25px;
+      text-align: center;
+      color: #f5ccff;
+      line-height: 1.6;
+      font-size: 1.05rem;
+      text-shadow: 0 1px 2px black;
+    }
+    .special-offer h2 {
+      color: #e580ff;
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+      text-shadow: 0 2px 4px black;
+    }
+    .mini-banner {
+      background: #000;
+      color: #cc66ff;
+      padding: 10px 16px;
+      border-radius: 12px;
+      box-shadow: 0 0 12px #cc66ff;
+      font-size: 0.95rem;
+      font-weight: bold;
+      text-align: center;
+      max-width: 450px;
+      margin-top: 25px;
+    }
+    .footer-banner {
+      background: #000;
+      color: #cc66ff;
+      padding: 10px 20px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px #cc66ff;
+      margin-top: 30px;
+      font-size: 1rem;
+      text-align: center;
+    }
+    @media (max-width: 480px) {
+      .final-box { font-size: 5.2vw; }
+      input, button { font-size: 4.5vw; padding: 3.5vw; }
+      #result, #loading, #fakeresult { font-size: 4.5vw; }
+      #description, #fakedesc { font-size: 4vw; }
+      .profile { width: 30vw; height: 30vw; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="profile-box">
+    <div class="profile"></div>
+    <div class="final-box">❤️ ]- Love ChecKer -[ ❤️</div>
+    <p style="color:#00e5ff; font-size: 1rem; margin-top: 12px;">❤️‍🔥 ]- Sawan Special -[ ❤️‍🔥</p>
+  </div>
+
+  <div class="love-india-panel">💞 ]- Love Checker for Indian Lovers -[ 💞</div>
+
+  <div id="viewCount" style="margin-top:15px; color:#00e676; font-size:1rem; font-weight:bold;">Views: 0</div>
+
+  <div class="input-box">
+    <h2 style="color:#ff80ab;">❤️‍🔥 ]- Love is Love Test -[ ❤️‍🔥️</h2>
+    <input type="text" id="name1" placeholder="Enter First Name">
+    <input type="text" id="name2" placeholder="Enter Partner Name"><br>
+    <button onclick="startCalc()">Checking for Love %</button>
+    <div id="loading">Checking... Please Wait -[ ️‍💞</div>
+    <div id="result"></div>
+    <div id="description"></div>
+  </div>
+
+  <div class="mini-banner">🧪 Fake Love | 💖 Real Love | 🔐 Login to Use</div>
+
+  <div class="input-box" id="loginBox">
+    <h2 style="color:#ff4d4d; font-weight:bold;">🔐 ]- Login to Used -[ 🔐</h2>
+    <input type="text" id="loginName" placeholder="Enter Your Name">
+    <input type="text" id="loginPhone" placeholder="Enter Mobile Number">
+    <button onclick="loginUser()">Login</button>
+    <div id="loginStatus" style="margin-top:10px; color:#80ff80;"></div>
+  </div>
+
+  <div class="special-offer">
+    <h2>💜 Special Love Offer!</h2>
+    <p><strong>Indians lovers check out your partner love score... 💞</p>
+    <p><strong>Limited Time Offer:</strong> <strong>Login to unlock full access... test Fake Love & -[ 💔 Real Love instantly</p>
+  </div>
+
+  <div class="input-box">
+    <h2 style="color:#00e5ff;">Real or Fake Love Checker</h2>
+    <input type="text" id="fake1" placeholder="Enter First Name ">
+    <input type="text" id="fake2" placeholder="Enter Partner Name "><br>
+    <button onclick="checkFake()">Fake or Real Love?</button>
+    <div id="fakeresult"></div>
+    <div id="fakedesc"></div>
+  </div>
+
+  <div class="input-box" id="adminLoginBox" style="display:none;">
+    <h2 style="color:#ff1744;">🔐 Admin Login</h2>
+    <input type="text" id="adminUser" placeholder="Enter Admin ID">
+    <input type="password" id="adminPass" placeholder="Enter Admin Password">
+    <button onclick="adminLogin()">Login as Admin</button>
+    <div id="adminLoginStatus" style="margin-top:10px; color:#ff4081;"></div>
+  </div>
+
+  <div class="input-box" id="adminDataBox" style="display:none; background:#111;">
+    <h2 style="color:#00e676;">📁 Saved Login Data</h2>
+    <pre id="adminData" style="text-align:left; color:#cccccc; font-size:0.95rem; max-height:200px; overflow:auto;"></pre>
+  </div>
+
+  <div class="footer-banner">👨‍💻 Developer – <strong>HK Prashant Singh</strong></div>
+  <button id="adminCornerBtn" onclick="toggleAdminLogin()" title="Admin Login">🔐</button>
+
+  <script>
+    let isLoggedIn = false;
+    window.onload = () => {
+      updateViewCount();
+      const name = localStorage.getItem("love_user_name");
+      const phone = localStorage.getItem("love_user_phone");
+      if (name && phone) {
+        isLoggedIn = true;
+        document.getElementById("loginBox").style.display = "none";
+      }
+    };
+    function updateViewCount() {
+      const countKey = "love_profile_views";
+      let count = localStorage.getItem(countKey);
+      if (!sessionStorage.getItem("viewed")) {
+        count = count ? parseInt(count) + 1 : 1;
+        localStorage.setItem(countKey, count);
+        sessionStorage.setItem("viewed", "yes");
+      }
+      document.getElementById("viewCount").innerHTML = `Views: ${count || 1}`;
+    }
+    function loginUser() {
+      const name = document.getElementById("loginName").value.trim();
+      const phone = document.getElementById("loginPhone").value.trim();
+      const status = document.getElementById("loginStatus");
+      if (!name || !phone) {
+        status.innerHTML = "❌ Please enter both name and phone!";
+        status.style.color = "#ff6666"; return;
+      }
+      const phoneRegex = /^[6-9]\d{9}$/;
+      if (!phoneRegex.test(phone)) {
+        status.innerHTML = "❌ Invalid mobile number!";
+        status.style.color = "#ff6666"; return;
+      }
+      localStorage.setItem("love_user_name", name);
+      localStorage.setItem("love_user_phone", phone);
+      isLoggedIn = true;
+      status.innerHTML = "✅ Login successful!";
+      status.style.color = "#00e676";
+      setTimeout(() => { document.getElementById("loginBox").style.display = "none"; }, 1500);
+    }
+    function hashString(str) {
+      let hash = 0;
+      for (let i = 0; i < str.length; i++) {
+        hash = str.charCodeAt(i) + ((hash << 5) - hash);
+      } return Math.abs(hash);
+    }
+    function startCalc() {
+      const name1 = document.getElementById("name1").value.trim();
+      const name2 = document.getElementById("name2").value.trim();
+      const result = document.getElementById("result");
+      const desc = document.getElementById("description");
+      const loading = document.getElementById("loading");
+      result.innerHTML = ""; desc.innerHTML = "";
+      if (!name1 || !name2) {
+        result.innerHTML = "❌ Please enter both names!"; return;
+      }
+      loading.style.display = "block";
+      setTimeout(() => {
+        loading.style.display = "none";
+        const combined = (name1 + name2).replace(/\s+/g, '');
+        let love = hashString(combined) % 101;
+        let extra = "";
+        if ((name1.toLowerCase() === "prashant" && name2.toLowerCase() === "neha") || (name2.toLowerCase() === "prashant" && name1.toLowerCase() === "neha")) {
+          love = 97; extra = "💑 Very Deep Love + Perfect Combination!";
+        } else if (love >= 90) extra = "💞 Strong love –  Give it time! ";
+        else if (love >= 70) extra = "❤️ Strong match – Could be long-term!";
+        else if (love >= 50) extra = "💕 Perfect your Partner – but 10% chances Break up your Partner ";
+        else if (love >= 30) extra = "💔 Weak connection – Needs work.";
+        else extra = "😢 Not much bond – Likely short-term.";
+        result.innerHTML = `💖 ${name1} ❤️ ${name2} = <strong>${love}%</strong> compatibility!`;
+        desc.innerHTML = extra;
+      }, 3000);
+    }
+    function checkFake() {
+      if (!isLoggedIn) { alert("❌ Please login first!"); return; }
+      const name1 = document.getElementById("fake1").value.trim().toLowerCase();
+      const name2 = document.getElementById("fake2").value.trim().toLowerCase();
+      const res = document.getElementById("fakeresult");
+      const des = document.getElementById("fakedesc");
+      res.innerHTML = ""; des.innerHTML = "";
+      if (!name1 || !name2) {
+        res.innerHTML = "❌ Please enter both names!"; return;
+      }
+      const combined = (name1 + name2).replace(/\s+/g, '');
+      const baseHash = hashString(combined) % 101;
+      const variation = hashString(name1 + name2 + "salt") % 3 - 1;
+      let percent = baseHash + variation;
+      percent = Math.max(0, Math.min(100, percent));
+      res.innerHTML = `🔍 Real Love Test Result: <strong>${percent}%</strong>`;
+      if (percent >= 80) des.innerHTML = "❤️ Pure Connection – Definitely Real Love!";
+      else if (percent >= 60) des.innerHTML = "💕 Seems Real – Worth exploring!";
+      else if (percent >= 40) des.innerHTML = "🤔 Mixed Signals – Could be fake!";
+      else if (percent >= 20) des.innerHTML = "💔 Looks Fake – Be careful!";
+      else des.innerHTML = "🚨 100% Fake Love – Run!";
+    }
+    function toggleAdminLogin() {
+      const adminBox = document.getElementById("adminLoginBox");
+      if (adminBox.style.display === "none" || !adminBox.style.display) {
+        adminBox.style.display = "block";
+        adminBox.scrollIntoView({ behavior: "smooth" });
+      } else {
+        adminBox.style.display = "none";
+      }
+    }
+    function adminLogin() {
+      const user = document.getElementById("adminUser").value.trim();
+      const pass = document.getElementById("adminPass").value.trim();
+      const status = document.getElementById("adminLoginStatus");
+      if (user === "HK" && pass === "hk7384") {
+        status.innerHTML = "✅ Admin access granted!";
+        status.style.color = "#00e676";
+        document.getElementById("adminLoginBox").style.display = "none";
+        document.getElementById("adminDataBox").style.display = "block";
+        const name = localStorage.getItem("love_user_name") || "N/A";
+        const phone = localStorage.getItem("love_user_phone") || "N/A";
+        document.getElementById("adminData").innerText =
+          `👤 Name: ${name}\n📞 Phone: ${phone}`;
+      } else {
+        status.innerHTML = "❌ Invalid credentials!";
+        status.style.color = "#ff4d4d";
+      }
+    }
+  </script>
+</body>
+</html>
